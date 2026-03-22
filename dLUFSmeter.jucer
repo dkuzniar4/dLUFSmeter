@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="FzHi7K" name="dLUFSmeter" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyWebsite="www.dkuzniar.com"
+              pluginManufacturer="dkuzniar">
+  <MAINGROUP id="ylHaZ6" name="dLUFSmeter">
+    <GROUP id="{BC22A09B-E5C2-DD4B-B627-E571CADE3EFB}" name="Assets">
+      <FILE id="xJbCnm" name="Lato-Medium.ttf" compile="0" resource="1" file="Assets/Lato-Medium.ttf"/>
+      <FILE id="VGiLOI" name="logo.png" compile="0" resource="1" file="Assets/logo.png"/>
+      <FILE id="tmd9US" name="dkLogo.png" compile="0" resource="1" file="Assets/dkLogo.png"/>
+    </GROUP>
+    <GROUP id="{18B95B4D-81B6-4F4D-F224-6C17363F688D}" name="Source">
+      <FILE id="YK1eo0" name="PeakMeterComponent.h" compile="0" resource="0"
+            file="Source/PeakMeterComponent.h"/>
+      <FILE id="Rva9KY" name="LufsMeterComponent.h" compile="0" resource="0"
+            file="Source/LufsMeterComponent.h"/>
+      <FILE id="JKai3t" name="dLUFSmeter.h" compile="0" resource="0" file="Source/dLUFSmeter.h"/>
+      <FILE id="WtlSxQ" name="LookAndFeel.cpp" compile="1" resource="0" file="Source/LookAndFeel.cpp"/>
+      <FILE id="lvObhU" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
+      <FILE id="Tlujyq" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="NThM0S" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="M1GxKE" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="qUQ1zH" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors_headless" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="dLUFSmeter"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="dLUFSmeter"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors_headless" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../repos/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../repos/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
