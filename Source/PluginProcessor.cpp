@@ -133,6 +133,52 @@ void DLUFSmeterAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer,
 {
     juce::ScopedNoDenormals noDenormals;
 
+    bool isPlaying = false;
+    double currentPos = lastPosition;
+
+    // =========================
+    // TRANSPORT DETECTION
+    // =========================
+    if (auto* playHead = getPlayHead())
+    {
+        juce::AudioPlayHead::CurrentPositionInfo pos;
+
+        if (playHead->getCurrentPosition(pos))
+        {
+            isPlaying = pos.isPlaying;
+            currentPos = pos.timeInSeconds;
+
+            bool started = isPlaying && !wasPlaying;
+            bool stopped = !isPlaying && wasPlaying;
+            bool seeked = isPlaying && std::abs(currentPos - lastPosition) > 0.5;
+
+            // DEBUG (na razie do testów)
+            if (started)
+            {
+                lufs.reset();
+                lufs.setIntegratedFreeze(false);
+                DBG("START");
+            }     
+
+            if (stopped)
+            {
+                lufs.setIntegratedFreeze(true);
+                DBG("STOP");
+            }              
+
+            if (seeked)
+            {
+                lufs.reset();
+                lufs.setIntegratedFreeze(false);
+                DBG("SEEK");
+            }
+                
+
+            wasPlaying = isPlaying;
+            lastPosition = currentPos;
+        }
+    }
+
     lufs.process(buffer.getArrayOfReadPointers(), buffer.getNumSamples());
 
     auto numSamples = buffer.getNumSamples();

@@ -67,8 +67,11 @@ public:
 
             energy /= ch;
 
-            totalEnergy += energy;
-            totalSamples++;
+            if (!freezeIntegrated)
+            {
+                totalEnergy += energy;
+                totalSamples++;
+            }
 
             pushMomentary(energy);
             pushShortTerm(energy);
@@ -95,6 +98,11 @@ public:
     {
         if (totalSamples == 0) return -100.0f;
         return toLUFS(totalEnergy / totalSamples);
+    }
+
+    void setIntegratedFreeze(bool shouldFreeze)
+    {
+        freezeIntegrated = shouldFreeze;
     }
 
 private:
@@ -216,4 +224,7 @@ private:
     int shortIndex{};
     int shortCount{};
     double shortSum{};
+
+    // Integrated
+    bool freezeIntegrated = false;
 };
