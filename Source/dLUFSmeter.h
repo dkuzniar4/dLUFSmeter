@@ -9,12 +9,12 @@ namespace
 }
 #endif
 
-class LUFSMeterJUCE
+class dLUFSmeter
 {
 public:
     static constexpr int MAX_CHANNELS = 2;
     static constexpr int MAX_SR = 192000;
-    static constexpr int MAX_WINDOW_SAMPLES = MAX_SR * 3; // 3 sek
+    static constexpr int MAX_WINDOW_SAMPLES = MAX_SR * 3; // 3 sec
 
     void prepare(double sampleRate, int numChannels)
     {
@@ -48,7 +48,6 @@ public:
         for (auto& f : hs) f.reset();
     }
 
-    // JUCE: call inside processBlock
     void process(const float* const* buffer, int numSamples)
     {
         for (int i = 0; i < numSamples; ++i)

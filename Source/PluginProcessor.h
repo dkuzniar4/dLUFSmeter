@@ -54,7 +54,7 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-    LUFSMeterJUCE lufs;
+    dLUFSmeter lufs;
 
     float peakL = 0.0f;
     float peakR = 0.0f;
